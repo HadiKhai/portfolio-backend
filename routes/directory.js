@@ -10,27 +10,45 @@ const fs = require('fs');
 
 /**
  * @swagger
- * /questions:
+ * /directories/{directory}:
  *   get:
  *     tags:
- *       - Questions
- *     description: Returns set of questions not related to specific themes
+ *       - Directories
+ *     description: Return all files and folders inside a directory
  *     produces:
  *       - application/json
+ *
+ *     parameters:
+ *
+ *       - name: directory
+ *         description: Directory with %2F between them
+ *         in: path
+ *         required: true
+ *         type: string
+ *
  *     responses:
  *       200:
- *         description: Fetched questions
+ *         description: Fetched directories
  */
-
-router.get('/:directories',  async (req, res) => {
-        const directoryPath = path.join(__dirname,`../${req.params.directories}` )
-        //passsing directoryPath and callback function
-        const directoryContent = await
-
+router.get('/:directory',  async (req, res) => {
+        const directoryContent = await getDirectoryContent(req);
         console.log(directoryContent)
-        // return res.send(directoryContent);
+        return res.send(directoryContent);
 
 });
+
+const getDirectoryContent =  (req) => {
+        const directoryPath = path.join(__dirname,`../${req.params.directory}`)
+        const content =  fs.readdirSync(directoryPath,   (error, files) => {
+                if (error) {
+                        return console.log('Unable to scan directory: ' + error);
+                }
+                console.log(files)
+               return files
+        });
+        return content
+
+}
 
 module.exports = router;
 

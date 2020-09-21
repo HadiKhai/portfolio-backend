@@ -1,6 +1,6 @@
 const express = require("express");
-// const swaggerUi = require('swagger-ui-express');
-// const swaggerJSDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsDoc = require('swagger-jsdoc');
 
 const directory = require('./routes/directory')
 
@@ -13,24 +13,24 @@ const port = 3000
 app.use('/directories', directory );
 
 // Swagger config -------------------------------------
-// const swaggerOptions = {
-//     swaggerDefinition: {
-//         info: {
-//             version: "4.1.4",
-//             title: "Portfolio API",
-//             description: "My Portfolio's API Information",
-//             contact: {
-//                 name: "HadiKhai"
-//             },
-//             servers: ["http://localhost:3000"]
-//         }
-//     },
-//     // ['.routes/*.js']
-//     apis: ["./routes/*.js"]
-// };
-//
-// const swaggerDocs = swaggerJSDoc(swaggerOptions);
-// app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+const swaggerOptions = {
+    swaggerDefinition: {
+        info: {
+            version: "1.0.0",
+            title: "Portfolio API",
+            description: "HadiKhai's Portfolio API Information",
+            contact: {
+                name: "HadiKhai"
+            },
+            servers: ["http://localhost:3000"]
+        }
+    },
+    // ['.routes/*.js']
+    apis: ["routes/*.js"]
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 
 // Error 404 ------------------------------------------
