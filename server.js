@@ -1,14 +1,16 @@
 const express = require("express");
-const swaggerUi = require('swagger-ui-express');
-const swaggerJSDoc = require('swagger-jsdoc');
+// const swaggerUi = require('swagger-ui-express');
+// const swaggerJSDoc = require('swagger-jsdoc');
 
 const directory = require('./routes/directory')
 
 const app = express()
 const port = 3000
 
+
+
 // Routes ------------------------------------------
-app.use('/directory', directory );
+app.use('/directories', directory );
 
 // Swagger config -------------------------------------
 // const swaggerOptions = {
