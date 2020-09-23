@@ -32,7 +32,6 @@ const fs = require('fs');
  */
 router.get('/:directory',  async (req, res) => {
         const directoryContent = await getDirectoryContent(req);
-        console.log(directoryContent)
         return res.send(directoryContent);
 
 });
@@ -43,10 +42,9 @@ const getDirectoryContent =  (req) => {
                 if (error) {
                         return console.log('Unable to scan directory: ' + error);
                 }
-                console.log(files)
                return files
         });
-        return content
+        return {content}
 
 }
 
