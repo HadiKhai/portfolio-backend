@@ -4,6 +4,8 @@ const router = express.Router();
 //requiring path and fs modules
 const path = require('path');
 const fs = require('fs');
+const responseType = require('../types/responseType');
+
 //joining path of directory
 
 
@@ -29,23 +31,29 @@ const fs = require('fs');
  *     responses:
  *       200:
  *         description: Fetched directories
+ *       404:
+ *         description: Directory Not Found
  */
 router.get('/:directory',  async (req, res) => {
-        const directoryContent = await getDirectoryContent(req);
-        return res.send(directoryContent);
-
+        try{
+            const directoryContent = await getDirectoryContent(req);
+           res.json(directoryContent).status(response.Ok)
+        }catch(err){
+            res.status(responseType.NOT_FOUND).send();
+            console.log(err)
+        }
 });
 
+
 const getDirectoryContent =  (req) => {
-        const directoryPath = path.join(__dirname,`../${req.params.directory}`)
+    const directoryPath = path.join(__dirname,`../${req.params.directory}`)
         const content =  fs.readdirSync(directoryPath,   (error, files) => {
                 if (error) {
                         return console.log('Unable to scan directory: ' + error);
                 }
                return files
         });
-        return {content}
-
+        return content
 }
 
 module.exports = router;
