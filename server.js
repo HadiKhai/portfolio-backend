@@ -35,11 +35,11 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 //Adding react build
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static('build'));
 
 
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join( 'build', 'index.html'));
 });
 
 // Error 404 ------------------------------------------
