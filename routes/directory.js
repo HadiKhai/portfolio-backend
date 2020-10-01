@@ -46,7 +46,7 @@ router.get('/:directory',  async (req, res) => {
 
 
 const getDirectoryContent =  (req) => {
-    const directoryPath = path.join(__dirname,`../${req.params.directory}`)
+    const directoryPath = path.join(__dirname,`${req.params.directory}`)
         const content =  fs.readdirSync(directoryPath,   (error, files) => {
                 if (error) {
                         return console.log('Unable to scan directory: ' + error);
