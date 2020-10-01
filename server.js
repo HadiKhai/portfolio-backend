@@ -10,14 +10,7 @@ const app = express()
 const port = process.env.PORT || 3000;
 
 app.use(
-    cors({
-        origin:
-            process.env.NODE_ENV === "production"
-                ? "https://hadikhaiportfolio.herokuapp.com/"
-                : true,
-        methods: ["GET", "PUT", "POST", "DELETE"],
-        allowedHeaders: ["Content-Type"],
-    })
+    cors()
 );
 
 // Routes ------------------------------------------
