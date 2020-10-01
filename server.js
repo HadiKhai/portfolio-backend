@@ -7,9 +7,18 @@ const path = require('path');
 const directory = require('./routes/directory')
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(
+    cors({
+        origin:
+            process.env.NODE_ENV === "production"
+                ? "https://hadikhaiportfolio.herokuapp.com/"
+                : true,
+        methods: ["GET", "PUT", "POST", "DELETE"],
+        allowedHeaders: ["Content-Type"],
+    })
+);
 
 // Routes ------------------------------------------
 app.use('/directories', directory );
