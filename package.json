@@ -1,9 +1,13 @@
 {
-  "name": "application-name",
+  "name": "HadiKhai Portfolio",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "nodejs ./bin/www"
+  },
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.14.5"
   },
   "dependencies": {
     "body-parser": "~1.0.0",
