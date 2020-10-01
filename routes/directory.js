@@ -37,7 +37,7 @@ const responseType = require('../types/responseType');
 router.get('/:directory',  async (req, res) => {
         try{
             const directoryContent = await getDirectoryContent(req);
-           res.json(directoryContent).status(response.Ok)
+           res.json(directoryContent).status(responseType.Ok)
         }catch(err){
             res.status(responseType.NOT_FOUND).send();
             console.log(err)
