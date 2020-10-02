@@ -1,0 +1,2 @@
+Terminal Frontend: https://github.com/HadiKhai/portfolio
+Terminal Backend: https://github.com/HadiKhai/portfolio-backend
