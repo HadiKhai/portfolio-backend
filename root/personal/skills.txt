@@ -1,1 +1,1 @@
-Java, C++, C#, Javascript, HTML, CSS, Typescript, Dart, Python, SQL, Verilog, VHDL, Assembly, MATLAB, PSPICE.
+Java, C++, C#, Javascript, HTML, CSS, Typescript, Dart, Python, SQL, Latex, Verilog, VHDL, Assembly, MATLAB,PSPICE.
