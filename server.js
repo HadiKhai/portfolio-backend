@@ -3,11 +3,23 @@ const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 const path = require('path');
+const robots = require("express-robots-txt");
 
 const directory = require('./routes/directory')
 
 const app = express()
 const port = process.env.PORT || 3000;
+const sitemap = require("./sitemap");
+
+
+app.use(sitemap);
+app.use(
+    robots({
+        UserAgent: "*",
+        Disallow: "",
+        Sitemap: "https://www.hadikhai.engineer/sitemap.xml"
+    })
+);
 
 app.use(
     cors()
