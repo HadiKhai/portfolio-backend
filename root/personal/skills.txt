@@ -1,1 +1,15 @@
-Java, C++, C#, Javascript, HTML, CSS, Typescript, Dart, Python, SQL, Latex, Verilog, VHDL, Assembly, MATLAB,PSPICE.
+Programming Languages
+Java, C++, C#, JavaScript, HTML, CSS, TypeScript, Python, SQL, LaTeX, Verilog, VHDL, Assembly, MATLAB.
+
+Technologies:
+    1. Machine Learning: Scikit learn, Keras, TensorFlow
+    2. Web and Software development:
+        a) Front-end Frameworks and Libraries: React, Vue
+        b) Some Libraries: Redux, Axios, React-Query, Nivo (Based on D3)
+        c) UI Frameworks: Bootstrap, Material Design, Semantic UI, Vuetify
+        d) Cross Platform Frameworks: Ionic, React Native
+        e) Back-end Framework: Fastify, Django, Express
+        f) Dapps: Web3, Solidity
+    3. Package managers: Npm/Yarn , Anaconda
+    4. Version control and source code management: Git, GitHub, GitLab
+    5. Other Skills: Unity, Photoshop, Illustrator, After Effects, Premiere Pro
